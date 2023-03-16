@@ -44,13 +44,10 @@
                     <input type="Email" class="form-control" id="exampleInputEmail1" value="{{$user->email}}" name="email" placeholder="Enter Email">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label for="exampleInputPassword1">New password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Rest Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
+
 
                 </div>
                 <!-- /.card-body -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -58,10 +59,14 @@ class UsersController extends Controller
             "name"=>"required|max:255|string",
             "email"=>"required|email"
         ]);
+        if($request->password != null){
+            $password = Hash::make($request->password);
+        }
 
         $user = User::find($user->id)->update([
             'name'=>$request->name,
-            "email"=>$request->email
+            "email"=>$request->email,
+            "password"=>$password
         ]);
         if($user){
             return redirect('users');
@@ -73,6 +78,6 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
     }
 }

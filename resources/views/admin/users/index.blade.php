@@ -53,7 +53,11 @@
                 <td>
                     <a href="{{route("users.show",$value->id)}}" class=""><i style="color: green" class="fa-sharp fa-solid fa-eye"></i></a>
                     <a href="{{route("users.edit",$value->id)}}" class=""><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class=""><i style="color: red" class="fa-sharp fa-solid fa-trash"></i></a>
+                    <form class style="display: contents" action={{route("users.destroy",$value->id)}} method="post">
+                        @csrf
+                        @method("DELETE")
+                        <button class="Btn-no-style" ><i style="color: red" class="fa-sharp fa-solid fa-trash"></i></button>
+                    </form>
                 </td>
             </tr>
             @endforeach
