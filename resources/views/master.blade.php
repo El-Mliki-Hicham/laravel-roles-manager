@@ -12,7 +12,6 @@
   @include("layouts.navbar")
   {{-- end navbar --}}
 
-
             {{-- sidebar --}}
             @include("layouts.sidebar")
             {{-- end sidebar --}}

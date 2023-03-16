@@ -54,7 +54,18 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            "name"=>"required|max:255|string",
+            "email"=>"required|email"
+        ]);
+
+        $user = User::find($user->id)->update([
+            'name'=>$request->name,
+            "email"=>$request->email
+        ]);
+        if($user){
+            return redirect('users');
+        }
     }
 
     /**
